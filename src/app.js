@@ -1,5 +1,3 @@
-// Je commence mon fichier principal en configurant mes outils (libraries, etc)
-
 require("dotenv").config();
 const connection = require("./db-config");
 const express = require("express");
@@ -20,6 +18,8 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
 app.use("/api", router);
+// app.use("/uploads", express.static("uploads/"));
+
 
 // Ici je prepare un msg d'accueil sur a route principale a savoir localhost:8000
 app.get("/", (req, res) => {
