@@ -17,9 +17,8 @@ app.use(express.urlencoded({extended: true}));
 // Ici, j'ouvre les vannes d'utilisation de mon API (cors = cross origin)
 app.use(cors());
 
+app.use("/uploads", express.static("uploads/"));
 app.use("/api", router);
-// app.use("/uploads", express.static("uploads/"));
-
 
 // Ici je prepare un msg d'accueil sur a route principale a savoir localhost:8000
 app.get("/", (req, res) => {
